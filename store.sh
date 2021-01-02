@@ -1,5 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
+
+Version=0.1
+echo "$version"
 #This is all setup stuff to make sure its all ready
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
@@ -52,6 +55,14 @@ About () {
 #HERE THE FIRST MENU FUNCTIONS END
 #SELECTED SYSTEMS MENU
 #DOWNLOADS GO INTO /VAR/TMP
+
+Download_All () {
+  exit
+}
+
+Download_Backround () {
+  exit
+}
 
 NES () {
   exit
@@ -233,7 +244,7 @@ SNES () {
 }
 
 GB () { 
-  exit
+  exit 
  }
  
  GBC () { 
@@ -439,6 +450,15 @@ About () {
 
 #Setup
 #load loading screen with this sudo apt-get -y install fbi
+
+
+wget -q --spider http://google.com
+
+if [ $? -eq 0 ]; then
+    echo "Online"
+else
+    whiptail --title "Internet Connection Not Availible" --msgbox "You appear to be offline. Please connect to wifi and try again." 8 78
+fi
 
 #Menu
 
