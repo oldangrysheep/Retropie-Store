@@ -54,7 +54,7 @@ About () {
 #DOWNLOADS GO INTO /VAR/TMP
 
 #Setup
-
+#load loading screen with this
 
 #Menu
 
