@@ -53,6 +53,390 @@ About () {
 #SELECTED SYSTEMS MENU
 #DOWNLOADS GO INTO /VAR/TMP
 
+NES () {
+  exit
+}
+
+SNES () { 
+  exit 
+}
+
+GB () { 
+  exit
+ }
+ 
+ GBC () { 
+  exit
+}
+
+GBA () {
+  exit
+}
+
+N64 () { 
+  exit
+}
+
+NDS () {
+  exit
+}
+
+VIRTUALBOY () {
+  exit
+}
+
+MEGADRIVE () {
+  exit
+}
+
+SATURN () {
+  exit 
+}
+
+DREAMCAST () {
+  exit
+}
+
+PSX () {
+  exit
+}
+
+PSP () { 
+  exit
+}
+
+3DO () {
+  exit
+}
+
+INTELEVISION () {
+  exit
+}
+
+AMIGA () {
+  exit
+}
+
+APPLE2 () {
+  exit
+}
+
+ATARI2600 () {
+  exit
+}
+
+ATARI5200 () {
+  exit
+}
+
+ATARI7800 () {
+  exit
+}
+
+ATARILYNX () {
+  exit
+}
+
+C64 () {
+  exit
+}
+
+COLECO () {
+  exit
+}
+
+FDS () {
+  exit
+}
+
+GAMEANDWATCH () {
+  exit
+}
+
+GAMEGEAR () {
+  exit
+}
+
+LOVE () {
+  exit 
+}
+
+MAC () {
+  exit
+}
+
+MOTO () {
+  exit
+}
+
+MSX () {
+  exit
+}
+
+NDSI () {
+  exit
+}
+
+NGPC () {
+  exit
+}
+
+ORIC () {
+  exit
+}
+
+SAMECOUPE () {
+  exit
+}
+SG1000 () {
+  exit
+}
+
+TRS80 () {
+  exit
+}
+
+VECTREX () {
+  exit
+}
+
+VIDEOPAC () {
+  exit
+}
+
+WONDERSWAN () {
+  exit
+}
+
+WONDERSWANCOLOR () {
+  exit
+}
+
+X68000 () {
+  exit
+}
+
+ZMACHINE () {
+  exit
+}
+
+#Specific Games Menu
+#This is where you can select what games you want (i can copy paste the stuff before and replace when i need to
+
+
+NES () {
+  exit
+}
+
+SNES () { 
+  exit 
+}
+
+GB () { 
+  exit
+ }
+ 
+ GBC () { 
+  exit
+}
+
+GBA () {
+  exit
+}
+
+N64 () { 
+  exit
+}
+
+NDS () {
+  exit
+}
+
+VIRTUALBOY () {
+  exit
+}
+
+MEGADRIVE () {
+  exit
+}
+
+SATURN () {
+  exit 
+}
+
+DREAMCAST () {
+  exit
+}
+
+PSX () {
+  exit
+}
+
+PSP () { 
+  exit
+}
+
+3DO () {
+  exit
+}
+
+INTELEVISION () {
+  exit
+}
+
+AMIGA () {
+  exit
+}
+
+APPLE2 () {
+  exit
+}
+
+ATARI2600 () {
+  exit
+}
+
+ATARI5200 () {
+  exit
+}
+
+ATARI7800 () {
+  exit
+}
+
+ATARILYNX () {
+  exit
+}
+
+C64 () {
+  exit
+}
+
+COLECO () {
+  exit
+}
+
+FDS () {
+  exit
+}
+
+GAMEANDWATCH () {
+  exit
+}
+
+GAMEGEAR () {
+  exit
+}
+
+LOVE () {
+  exit 
+}
+
+MAC () {
+  exit
+}
+
+MOTO () {
+  exit
+}
+
+MSX () {
+  exit
+}
+
+NDSI () {
+  exit
+}
+
+NGPC () {
+  exit
+}
+
+ORIC () {
+  exit
+}
+
+SAMECOUPE () {
+  exit
+}
+SG1000 () {
+  exit
+}
+
+TRS80 () {
+  exit
+}
+
+VECTREX () {
+  exit
+}
+
+VIDEOPAC () {
+  exit
+}
+
+WONDERSWAN () {
+  exit
+}
+
+WONDERSWANCOLOR () {
+  exit
+}
+
+X68000 () {
+  exit
+}
+
+ZMACHINE () {
+  exit
+}
+
+#this is where i do the media stuff
+
+Stream () {
+  exit
+}
+
+Download () {
+  exit
+}
+
+#I know this it isnt fully done yet so oopsie
+#Settings
+
+Nordvpn_Login () {
+  exit
+}
+
+Nordvpn_Connect () {
+  exit
+}
+
+Nordvpn_Disconnect () {
+  exit
+}
+
+SetDownloadLocation () {
+  exit
+}
+
+#Sava Data Stuff
+
+Backup_all () {
+  exit
+}
+
+Restore_All () {
+  exit
+}
+
+#About
+
+About () {
+  exit
+}
+
+
 #Setup
 #load loading screen with this sudo apt-get -y install fbi
 
@@ -68,7 +452,7 @@ function advancedMenu {
         "6" "Save Data" \
         "7" "About" \
   	"8" "Update" \
-        "9" "Exit" 3>&1 1>&2 2>&3)
+        "9" "exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
         exit
