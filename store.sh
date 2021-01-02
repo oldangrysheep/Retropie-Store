@@ -54,7 +54,7 @@ About () {
 #DOWNLOADS GO INTO /VAR/TMP
 
 #Setup
-#load loading screen with this
+#load loading screen with this sudo apt-get -y install fbi
 
 #Menu
 
