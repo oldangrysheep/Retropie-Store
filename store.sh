@@ -65,9 +65,9 @@ function advancedMenu {
         "3" "Download Specfic Games" \
         "4" "Media Library" \
         "5" "Settings" \
-	      "6" "Save Data" \
+        "6" "Save Data" \
         "7" "About" \
-	    	"8" "Update" \
+  	"8" "Update" \
         "9" "Exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
@@ -84,10 +84,10 @@ function advancedMenu {
         ;;
         5) 
         exit
-	      ;;
+	;;
        	6)
-	      exit
-	      ;;
+        exit
+        ;;
         7) 
         exit
         ;;
