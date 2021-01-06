@@ -1,6 +1,7 @@
 #!/bin/bash
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
+sudo apt --fix-broken install
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
   sudo apt-get install whiptail -y
@@ -8,7 +9,7 @@ fi
 
 if ! [ -x "$(command -v nordvpn)" ]; then
   echo "Just installing Dependancies" 
-  sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+  sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh) -y
 fi
 
 if ! [ -x "$(command -v unzip)" ]; then
