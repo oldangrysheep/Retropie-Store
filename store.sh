@@ -1,9 +1,6 @@
 #!/bin/bash
-
-
-Version=0.1
-echo "$version"
 #This is all setup stuff to make sure its all ready
+#Command is located in /usr/bin/"Retropie Store"
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
   sudo apt-get install whiptail -y
@@ -22,10 +19,30 @@ if ! [ -x "$(command -v unzip)" ]; then
   sudo reboot now
 fi
 
+cleanup () {
+  exit
+{
+
 # Here We Go! 
 
 Download_All_Roms () {
-   echo "Download All Roms"
+   function advancedMenu {
+    ADVSEL=$(whiptail --title "Download All Roms" --menu "Choose an option" 25 78 16 \
+        "1" "Download in backround" \
+        "2" "Download here" 3>&1 1>&2 2>&3)
+    case $ADVSEL in
+        1)
+        Download_All_Roms
+        ;;
+        2)
+        Download_Selected_Systems
+		
+        ;;
+    esac
+}
+advancedMenu
+mainmenu
+
 }
 
 Download_Selected_Systems () {
@@ -50,6 +67,10 @@ Save_Data () {
 
 About () {
   echo "stuff"
+}
+
+Update () {
+  echo "Update"
 }
 
 #HERE THE FIRST MENU FUNCTIONS END
@@ -447,7 +468,6 @@ About () {
   exit
 }
 
-
 #Setup
 #load loading screen with this sudo apt-get -y install fbi
 
@@ -460,11 +480,19 @@ else
     whiptail --title "Internet Connection Not Availible" --msgbox "You appear to be offline. Please connect to wifi and try again." 8 78
 fi
 
-#Menu
+#replace this with auto update soon
+cd /usr/bin
+sudo mkdir  -p "Retropie Store"
+cd /usr/bin/'Retropie Store'
+sudo rm -r *
+sudo wget https://raw.githubusercontent.com/oldangrysheep/Retropie-Store/main/store.sh
+sudo chmod +x store.sh
 
+#Menu
+mainmenu () {
 function advancedMenu {
-    ADVSEL=$(whiptail --title "RetroPie Rom Settings" --menu "Choose an option" 15 60 4 \
-        "1" "Download All Roms (Not Recomended 100+ Gigabytes)" \
+    ADVSEL=$(whiptail --title "RetroPie Rom Settings" --menu "Choose an option" 25 78 16 \
+        "1" "Download All Roms (Not recomended unless you have 5T+ Space)" \
         "2" "Select Roms and Download" \
         "3" "Download Specfic Games" \
         "4" "Media Library" \
@@ -475,28 +503,36 @@ function advancedMenu {
         "9" "exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
-        exit
+        Download_All_Roms
+		gobacktomenuafterselection
         ;;
         2)
-        exit
+        Download_Selected_Systems
+		gobacktomenuafterselection
         ;;
         3)
-        exit
+        Download_Specific_Games
+		gobacktomenuafterselection
         ;;
         4) 
-        exit
+        Media
+		gobacktomenuafterselection
         ;;
         5) 
-        exit
+        Settings
+		gobacktomenuafterselection
 	;;
        	6)
-        exit
+        Save_Data
+		gobacktomenuafterselection
         ;;
         7) 
-        exit
+        About
+		gobacktomenuafterselection
         ;;
       	8)
-        exit
+        Update
+		gobacktomenuafterselection
       	;;
         9)
         exit
@@ -505,7 +541,10 @@ function advancedMenu {
     esac
 }
 advancedMenu
+}
 
+mainmenu
+cleanup
 exit
 
    
