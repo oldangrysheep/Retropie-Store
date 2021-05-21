@@ -486,7 +486,6 @@ sudo chmod +x store.sh
 
 #Menu
 mainmenu () {
-function advancedMenu {
     ADVSEL=$(whiptail --title "RetroPie Rom Settings" --menu "Choose an option" 25 78 16 \
         "1" "Download All Roms (Not recomended unless you have 5T+ Space)" \
         "2" "Select Roms and Download" \
