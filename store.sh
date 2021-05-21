@@ -24,7 +24,6 @@ cleanup () {
 # Here We Go! 
 
 Download_All_Roms () {
-   function advancedMenu {
     ADVSEL=$(whiptail --title "Download All Roms" --menu "Choose an option" 25 78 16 \
         "1" "Download in backround" \
         "2" "Download here" 3>&1 1>&2 2>&3)
@@ -38,10 +37,9 @@ Download_All_Roms () {
         ;;
     esac
 }
-advancedMenu
+Download_All_Roms
 mainmenu
 
-}
 
 Download_Selected_Systems () {
   echo "Download Selected Systems"
