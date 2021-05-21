@@ -19,7 +19,7 @@ fi
 
 cleanup () {
   exit
-{
+}
 
 # Here We Go! 
 
@@ -532,14 +532,7 @@ mainmenu () {
         9)
         exit
         ;;
-        
     esac
 }
-advancedMenu
-}
-
 mainmenu
-cleanup
-exit
 
-   
