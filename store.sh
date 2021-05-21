@@ -37,10 +37,6 @@ Download_All_Roms () {
         ;;
     esac
 }
-Download_All_Roms
-mainmenu
-
-
 Download_Selected_Systems () {
   echo "Download Selected Systems"
 }
@@ -474,6 +470,7 @@ if [ $? -eq 0 ]; then
     echo "Online"
 else
     whiptail --title "Internet Connection Not Availible" --msgbox "You appear to be offline. Please connect to wifi and try again." 8 78
+    exit
 fi
 
 #replace this with auto update soon
