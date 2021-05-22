@@ -495,7 +495,6 @@ mainmenu () {
         "9" "exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
-        Download_All_Roms
 		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
 		mainmenu
         ;;
