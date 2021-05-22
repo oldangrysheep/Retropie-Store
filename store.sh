@@ -1,8 +1,8 @@
 #!/bin/bash
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
-#VERSION 0.5 BETA
-sudo echo "Version .5 BETA"
+#VERSION 0.51 BETA
+sudo echo "Version .51 BETA"
 
 sudo apt --fix-broken install
 if ! [ -x "$(command -v whiptail)" ]; then
@@ -99,7 +99,7 @@ Download_Selected_Systems () {
         ;;
         9)
 	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/games/megadrive.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/megadrive.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         10)
