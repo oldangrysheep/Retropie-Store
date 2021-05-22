@@ -39,7 +39,7 @@ Download_All_Roms () {
     esac
 }
 Download_Selected_Systems () {
-    ADVSEL=$(whiptail --title "Decide What Systems You Want" --menu "Choose an option" 15 60 4 \
+    ADVSEL=$(whiptail --title "Decide What Systems You Want" --menu "Choose an option" 25 78 16 \
         "1" "Nintendo Entertainment System" \
         "2" "Super Nintendo Entertainemnt System" \
         "3" "Gameboy" \
