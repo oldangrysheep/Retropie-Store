@@ -2,6 +2,8 @@
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
 sudo apt --fix-broken install
+sudo apt-get update
+sudo apt-get upgrade
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
   sudo apt-get install whiptail -y
