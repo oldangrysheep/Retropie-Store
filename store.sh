@@ -61,47 +61,59 @@ Download_Selected_Systems () {
             Download_Selected_Systems
         ;;
         2)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/snes.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         3)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gb.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         4)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gbc.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         5)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/gba.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         6)
+	cd /usr/bin/'Retropie Store'/temp
             exit
         ;;
         7)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/nds.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         8)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/virtualboy.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         9)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/megadrive.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         10)
+	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/saturn.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         11)
+	cd /usr/bin/'Retropie Store'/temp
             exit
         ;;
         12)
+	cd /usr/bin/'Retropie Store'/temp
             exit
         ;;
         13)
+	cd /usr/bin/'Retropie Store'/temp
             exit
         ;;
         14)
@@ -117,6 +129,8 @@ cd /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'
     sudo rm -r *.zip
     sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* /home/pi/RetroPie/roms/
     whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
+    cd /usr/bin/'Retropie Store'
+    mainmenu
 else
     Download_Selected_Systems
 fi
