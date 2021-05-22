@@ -115,7 +115,7 @@ done | whiptail --gauge "Extracting Files ..." 10 50 0
 cd /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'
     sudo unzip '*.zip'
     sudo rm -r *.zip
-    sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* cd /home/pi/RetroPie/roms/
+    sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* /home/pi/RetroPie/roms/
     whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
 else
     Download_Selected_Systems
