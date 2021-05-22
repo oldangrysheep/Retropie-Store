@@ -1,6 +1,9 @@
 #!/bin/bash
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
+#VERSION 0.5 BETA
+sudo echo "Version .5 BETA"
+
 sudo apt --fix-broken install
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
