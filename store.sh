@@ -103,21 +103,21 @@ Download_Selected_Systems () {
             exit
         ;;
         14)
+	  sudo mkdir -p /usr/bin/'Retropie Store'/temp
+	cd /usr/bin/'Retropie Store'/temp
             if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
     sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
-    sudo mkdir -p /usr/bin/'Retropie Store'/temp
-	cd /usr/bin/'Retropie Store'/temp
     for i in {1..100}; do
    echo $i
    sleep 0.1
 done | whiptail --gauge "Extracting Files ..." 10 50 0
+    cd /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'
     sudo unzip '*.zip'
     sudo rm -r *.zip
-    sudo cp -a /usr/bin/'Retropie Store'/temp/* cd /home/pi/RetroPie/roms/
+    sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* cd /home/pi/RetroPie/roms/
     whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
-    cd /usr/bin/RomDownloader/Temp
 else
-    sudo sh ./decide.sh
+    Download_Selected_Systems
 fi
             
             
