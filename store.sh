@@ -55,7 +55,7 @@ Download_Selected_Systems () {
         "14" "Download All Selected" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
-	    cd cd /usr/bin/'Retropie Store'/temp
+	    cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
