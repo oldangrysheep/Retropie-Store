@@ -2,7 +2,7 @@
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
 #VERSION 0.51 BETA
-sudo echo "Version .512 BETA"
+sudo echo "Version .513 BETA"
 
 sudo apt --fix-broken install
 if ! [ -x "$(command -v whiptail)" ]; then
@@ -85,6 +85,7 @@ Download_Selected_Systems () {
         ;;
         6)
 	    cd /usr/bin/'Retropie Store'/temp
+		echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/n64.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         7)
@@ -113,10 +114,12 @@ Download_Selected_Systems () {
         ;;
         12)
 	    cd /usr/bin/'Retropie Store'/temp
+		echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/psx.zip"  >> itemlist.txt
             Download_Selected_Systems
         ;;
         13)
 	    cd /usr/bin/'Retropie Store'/temp
+		echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/psp.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         14)
