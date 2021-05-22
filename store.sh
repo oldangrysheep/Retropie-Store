@@ -21,7 +21,7 @@ cleanup () {
   exit
 }
 
-# Here We Go! 
+# Basic Stuff
 
 Download_All_Roms () {
     ADVSEL=$(whiptail --title "Download All Roms" --menu "Choose an option" 25 78 16 \
@@ -105,14 +105,15 @@ Download_Selected_Systems () {
         14)
             if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
     sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
-    cd /usr/bin/RomDownloader/Temp/gb_20201207/games
+    sudo mkdir -p /usr/bin/'Retropie Store'/temp
+	cd /usr/bin/'Retropie Store'/temp
     for i in {1..100}; do
    echo $i
    sleep 0.1
 done | whiptail --gauge "Extracting Files ..." 10 50 0
     sudo unzip '*.zip'
     sudo rm -r *.zip
-    sudo cp -a /usr/bin/RomDownloader/Temp/gb_20201207/games/* cd /home/pi/RetroPie/roms/
+    sudo cp -a /usr/bin/'Retropie Store'/temp/* cd /home/pi/RetroPie/roms/
     whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
     cd /usr/bin/RomDownloader/Temp
 else
@@ -141,7 +142,7 @@ Save_Data () {
 }
 
 About () {
-  echo "stuff"
+  whiptail --title "About the RetroPie Store" --msgbox "Hello (づ｡◕‿‿◕｡)づ This store is to help get new roms for RetroPie and automatically install them" 8 78
 }
 
 Update () {
@@ -608,7 +609,6 @@ mainmenu () {
         ;;
         7) 
         About
-		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
 		mainmenu
         ;;
       	8)
