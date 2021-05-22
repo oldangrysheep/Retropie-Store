@@ -55,6 +55,7 @@ Download_Selected_Systems () {
         "14" "Download All Selected" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
+	    cd cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
@@ -104,12 +105,12 @@ Download_Selected_Systems () {
         ;;
         14)
             if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
+	    cd /usr/bin/'Retropie Store'/temp
     sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
     for i in {1..100}; do
    echo $i
    sleep 0.1
 done | whiptail --gauge "Extracting Files ..." 10 50 0
-    cd /usr/bin/'Retropie Store'/temp
     sudo unzip '*.zip'
     sudo rm -r *.zip
     sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* cd /home/pi/RetroPie/roms/
