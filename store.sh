@@ -44,44 +44,45 @@ Download_All_Roms () {
 Download_Selected_Systems () {
     ADVSEL=$(whiptail --title "Decide What Systems You Want" --menu "Choose an option" 25 78 16 \
 	"1" "Download All Selected" \
-        "2" "Nintendo Entertainment System" \
-        "3" "Super Nintendo Entertainemnt System" \
-        "4" "Gameboy" \
-        "5" "Gameboy Color" \
-        "6" "Gameboy Advanced" \
-        "7" "Nintendo 64" \
-        "8" "Nintendo Ds" \
-        "9" "Nintendo Virtual Boy" \
-        "10" "Megadrive Games" \
-        "11" "Sega Saturn" \
-        "12" "Sega Dreamcast" \
-        "13" "Playstation 1" \
-        "14" "Playstation Portable" \
-        "15" "3do (1993) " \
-	"16" "Nintendo DSI" \
-	"17" "Intellivision" \
-	"18" "Philips CD-i" \
-	"19" "Amiga" \
-	"20" "Apple 2 Computers" \
-	"21" "Atari 2600" \
-	"22" "Atarti 5200" \
-	"23" "Atari 7800" \
-	"24" "Atari Lynx" \
-	"25" "Commodore 64" \
-	"26" "Coleco" \
-	"27" "Famicon Disk System" \
-	"28" "Game And Watch" \
-	"29" "GameGear" \
-	"30" "Löve" \
-	"31" "Macintosh" \
-	"32" "MSX" \
-	"33" "Neo Geo Pocket Color" \
-	"34" "Oric" \
-	"35" "SameCoupe" \
-	"36" "SG-1000" \
-	"37" "Wonderswan" \
-	"38" "Wonderswan Color" \
-	"39" "ScummVM" 3>&1 1>&2 2>&3)
+	"2" "Exit To Main Menu" \
+	"3" "Nintendo Entertainment System" \
+        "4" "Super Nintendo Entertainemnt System" \
+        "5" "Gameboy" \
+        "6" "Gameboy Color" \
+        "7" "Gameboy Advanced" \
+        "8" "Nintendo 64" \
+        "9" "Nintendo Ds" \
+        "10" "Nintendo Virtual Boy" \
+        "11" "Megadrive Games" \
+        "12" "Sega Saturn" \
+        "13" "Sega Dreamcast" \
+        "14" "Playstation 1" \
+        "15" "Playstation Portable" \
+        "16" "3do (1993) " \
+	"17" "Nintendo DSI" \
+	"18" "Intellivision" \
+	"19" "Philips CD-i" \
+	"20" "Amiga" \
+	"21" "Apple 2 Computers" \
+	"22" "Atari 2600" \
+	"23" "Atarti 5200" \
+	"24" "Atari 7800" \
+	"25" "Atari Lynx" \
+	"26" "Commodore 64" \
+	"27" "Coleco" \
+	"28" "Famicon Disk System" \
+	"29" "Game And Watch" \
+	"30" "GameGear" \
+	"31" "Löve" \
+	"32" "Macintosh" \
+	"33" "MSX" \
+	"34" "Neo Geo Pocket Color" \
+	"35" "Oric" \
+	"36" "SameCoupe" \
+	"37" "SG-1000" \
+	"38" "Wonderswan" \
+	"39" "Wonderswan Color" \
+	"40 " "ScummVM" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
             if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
@@ -103,67 +104,198 @@ else
 fi   
         ;;
         2)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/snes.zip" >> itemlist.txt
-            Download_Selected_Systems
+	mainmenu
         ;;
         3)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gb.zip" >> itemlist.txt
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         4)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gbc.zip" >> itemlist.txt
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/snes.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         5)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gba.zip" >> itemlist.txt
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gb.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         6)
 	    cd /usr/bin/'Retropie Store'/temp
-		echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/n64.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gbc.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         7)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nds.zip" >> itemlist.txt
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gba.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         8)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/virtualboy.zip" >> itemlist.txt
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/n64.zip.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         9)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/megadrive.zip" >> itemlist.txt
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nds.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         10)
-	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/games/saturn.zip" >> itemlist.txt
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/virtualboy.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         11)
 	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/megadrive.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         12)
 	    cd /usr/bin/'Retropie Store'/temp
-		echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/psx.zip"  >> itemlist.txt
+            echo "lol saturn isnt done yet"
             Download_Selected_Systems
         ;;
         13)
 	    cd /usr/bin/'Retropie Store'/temp
-		echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/psp.zip" >> itemlist.txt
+            echo "uh oh dreamcast aint done yet :o"
             Download_Selected_Systems
         ;;
         14)
-	exit
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/psx.zip" >> itemlist.txt
+            Download_Selected_Systems
         ;;
+	15)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/psp.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	16)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/3do.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	17)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/ndsi.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	18)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/Intellivision.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	19)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/Philips%20CD-i.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	20)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/amiga.zip.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	21)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/apple2.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	22)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/atari2600.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	23)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/atari5200.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	24)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/atari7800.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	25)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/atarilynx.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	26)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/c64.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	27)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/coleco.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	28)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/fds.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	29)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gameandwatch.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	30)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gamegear.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	31)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/love.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	32)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/macintosh.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	33)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/msx.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	34)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/ngpc.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	35) 
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/oric.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	36)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/samecoupe.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	37)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/sg-1000.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	38)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/wonderswan.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	39)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/wonderswancolor.zip" >> itemlist.txt
+            Download_Selected_Systems
+	;;
+	40)
+	    cd /usr/bin/'Retropie Store'/temp
+            echo "lol scummvm not here yet"
+            Download_Selected_Systems
+	;;
     esac
 }
   
