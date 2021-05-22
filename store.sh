@@ -18,7 +18,8 @@ if ! [ -x "$(command -v unzip)" ]; then
 fi
 
 cleanup () {
-  exit
+  cd /usr/bin/'Retropie Store'
+  sudo rm -r temp
 }
 
 # Basic Stuff
@@ -622,4 +623,5 @@ mainmenu () {
     esac
 }
 mainmenu
+cleanup
 
