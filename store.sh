@@ -56,7 +56,7 @@ Download_Selected_Systems () {
     case $ADVSEL in
         1)
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         2)
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/snes.zip" >> itemlist.txt
@@ -103,15 +103,13 @@ Download_Selected_Systems () {
             exit
         ;;
         14)
-	  sudo mkdir -p /usr/bin/'Retropie Store'/temp
-	cd /usr/bin/'Retropie Store'/temp
             if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
     sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
     for i in {1..100}; do
    echo $i
    sleep 0.1
 done | whiptail --gauge "Extracting Files ..." 10 50 0
-    cd /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'
+    cd /usr/bin/'Retropie Store'/temp
     sudo unzip '*.zip'
     sudo rm -r *.zip
     sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* cd /home/pi/RetroPie/roms/
@@ -583,7 +581,9 @@ mainmenu () {
 		mainmenu
         ;;
         2)
-        Download_Selected_Systems
+       	sudo mkdir -p /usr/bin/'Retropie Store'/temp
+	cd /usr/bin/'Retropie Store'/temp
+	Download_Selected_Systems
 		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
 		mainmenu
         ;;
