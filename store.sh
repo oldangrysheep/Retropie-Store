@@ -2,7 +2,7 @@
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
 #VERSION 0.51 BETA
-sudo echo "Version .51 BETA"
+sudo echo "Version .511 BETA"
 
 sudo apt --fix-broken install
 if ! [ -x "$(command -v whiptail)" ]; then
@@ -80,7 +80,7 @@ Download_Selected_Systems () {
         ;;
         5)
 	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/games/gba.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gba.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         6)
@@ -89,7 +89,7 @@ Download_Selected_Systems () {
         ;;
         7)
 	cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/games/nds.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nds.zip" >> itemlist.txt
             Download_Selected_Systems
         ;;
         8)
