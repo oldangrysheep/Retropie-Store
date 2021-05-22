@@ -500,31 +500,37 @@ mainmenu () {
         ;;
         2)
         Download_Selected_Systems
-		gobacktomenuafterselection
+		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
+		mainmenu
         ;;
         3)
         Download_Specific_Games
-		gobacktomenuafterselection
+		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
+		mainmenu
         ;;
         4) 
         Media
-		gobacktomenuafterselection
+		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
+		mainmenu
         ;;
         5) 
         Settings
-		gobacktomenuafterselection
+		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
+		mainmenu
 	;;
        	6)
         Save_Data
-		gobacktomenuafterselection
+		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
+		mainmenu
         ;;
         7) 
         About
-		gobacktomenuafterselection
+		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
+		mainmenu
         ;;
       	8)
         Update
-		gobacktomenuafterselection
+		
       	;;
         9)
         exit
