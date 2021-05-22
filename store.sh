@@ -112,6 +112,7 @@ Download_Selected_Systems () {
    echo $i
    sleep 0.1
 done | whiptail --gauge "Extracting Files ..." 10 50 0
+cd /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'
     sudo unzip '*.zip'
     sudo rm -r *.zip
     sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* cd /home/pi/RetroPie/roms/
