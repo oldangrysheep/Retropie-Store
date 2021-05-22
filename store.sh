@@ -43,50 +43,64 @@ Download_All_Roms () {
 }
 Download_Selected_Systems () {
     ADVSEL=$(whiptail --title "Decide What Systems You Want" --menu "Choose an option" 25 78 16 \
-		"1" "Download All Selected" \
-        "1" "Nintendo Entertainment System" \
-        "2" "Super Nintendo Entertainemnt System" \
-        "3" "Gameboy" \
-        "4" "Gameboy Color" \
-        "5" "Gameboy Advanced" \
-        "6" "Nintendo 64" \
-        "7" "Nintendo Ds" \
-        "8" "Nintendo Virtual Boy" \
-        "9" "Megadrive Games" \
-        "10" "Sega Saturn" \
-        "11" "Sega Dreamcast" \
-        "12" "Playstation 1" \
-        "13" "Playstation Portable" \
-        "14" "3do (1993) " \
-		"15" "Nintendo DSI" \
-		"16" "Intellivision" \
-		"17" "Philips CD-i" \
-		"18" "Amiga" \
-		"19" "Apple 2 Computers" \
-		"20" "Atari 2600" \
-		"21" "Atarti 5200" \
-		"22" "Atari 7800" \
-		"23" "Atari Lynx" \
-		"24" "Commodore 64" \
-		"25" "Coleco" \
-		"26" "Famicon Disk System" \
-		"27" "Game And Watch" \
-		"28" "GameGear" \
-		"29" "Löve" \
-		"30" "Macintosh" \
-		"31" "MSX" \
-		"32" "Neo Geo Pocket Color" \
-		"33" "Oric" \
-		"34" "SameCoupe" \
-		"35" "SG-1000" \
-		"36" "Wonderswan" \
-		"37" "Wonderswan Color" \
-		"38" "ScummVM" 3>&1 1>&2 2>&3)
+	"1" "Download All Selected" \
+        "2" "Nintendo Entertainment System" \
+        "3" "Super Nintendo Entertainemnt System" \
+        "4" "Gameboy" \
+        "5" "Gameboy Color" \
+        "6" "Gameboy Advanced" \
+        "7" "Nintendo 64" \
+        "8" "Nintendo Ds" \
+        "9" "Nintendo Virtual Boy" \
+        "10" "Megadrive Games" \
+        "11" "Sega Saturn" \
+        "12" "Sega Dreamcast" \
+        "13" "Playstation 1" \
+        "14" "Playstation Portable" \
+        "15" "3do (1993) " \
+	"16" "Nintendo DSI" \
+	"17" "Intellivision" \
+	"18" "Philips CD-i" \
+	"19" "Amiga" \
+	"20" "Apple 2 Computers" \
+	"21" "Atari 2600" \
+	"22" "Atarti 5200" \
+	"23" "Atari 7800" \
+	"24" "Atari Lynx" \
+	"25" "Commodore 64" \
+	"26" "Coleco" \
+	"27" "Famicon Disk System" \
+	"28" "Game And Watch" \
+	"29" "GameGear" \
+	"30" "Löve" \
+	"31" "Macintosh" \
+	"32" "MSX" \
+	"33" "Neo Geo Pocket Color" \
+	"34" "Oric" \
+	"35" "SameCoupe" \
+	"36" "SG-1000" \
+	"37" "Wonderswan" \
+	"38" "Wonderswan Color" \
+	"39" "ScummVM" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
+            if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
 	    cd /usr/bin/'Retropie Store'/temp
-            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip" >> itemlist.txt
-            Download_Selected_Systems
+    sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
+    for i in {1..100}; do
+   echo $i
+   sleep 0.1
+done | whiptail --gauge "Extracting Files ..." 10 50 0
+cd /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'
+    sudo unzip '*.zip'
+    sudo rm -r *.zip
+    sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* /home/pi/RetroPie/roms/
+    whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
+    cd /usr/bin/'Retropie Store'
+    mainmenu
+else
+    Download_Selected_Systems
+fi   
         ;;
         2)
 	cd /usr/bin/'Retropie Store'/temp
@@ -148,25 +162,7 @@ Download_Selected_Systems () {
             Download_Selected_Systems
         ;;
         14)
-            if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
-	    cd /usr/bin/'Retropie Store'/temp
-    sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
-    for i in {1..100}; do
-   echo $i
-   sleep 0.1
-done | whiptail --gauge "Extracting Files ..." 10 50 0
-cd /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'
-    sudo unzip '*.zip'
-    sudo rm -r *.zip
-    sudo cp -a /usr/bin/'Retropie Store'/temp/gb_20201207/'Complete Rom Sets'/* /home/pi/RetroPie/roms/
-    whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
-    cd /usr/bin/'Retropie Store'
-    mainmenu
-else
-    Download_Selected_Systems
-fi
-            
-            
+	exit
         ;;
     esac
 }
