@@ -66,58 +66,58 @@ Download_Selected_Systems () {
         2)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/snes.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         3)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gb.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         4)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gbc.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         5)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/gba.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         6)
-	cd /usr/bin/'Retropie Store'/temp
-            exit
+	    cd /usr/bin/'Retropie Store'/temp
+            Download_Selected_Systems
         ;;
         7)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/nds.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         8)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/virtualboy.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         9)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/megadrive.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         10)
 	cd /usr/bin/'Retropie Store'/temp
             echo "https://archive.org/download/gb_20201207/games/saturn.zip" >> itemlist.txt
-            sudo sh ./decide.sh
+            Download_Selected_Systems
         ;;
         11)
-	cd /usr/bin/'Retropie Store'/temp
-            exit
+	    cd /usr/bin/'Retropie Store'/temp
+            Download_Selected_Systems
         ;;
         12)
-	cd /usr/bin/'Retropie Store'/temp
-            exit
+	    cd /usr/bin/'Retropie Store'/temp
+            Download_Selected_Systems
         ;;
         13)
-	cd /usr/bin/'Retropie Store'/temp
-            exit
+	    cd /usr/bin/'Retropie Store'/temp
+            Download_Selected_Systems
         ;;
         14)
             if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
