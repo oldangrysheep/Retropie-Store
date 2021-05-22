@@ -2,7 +2,7 @@
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
 #VERSION 0.51 BETA
-sudo echo "Version .511 BETA"
+sudo echo "Version .512 BETA"
 
 sudo apt --fix-broken install
 if ! [ -x "$(command -v whiptail)" ]; then
@@ -629,7 +629,6 @@ mainmenu () {
         ;;
         7) 
         About
-		mainmenu
         ;;
       	8)
         Update
