@@ -1,8 +1,8 @@
 #!/bin/bash
 #This is all setup stuff to make sure its all ready
 #Command is located in /usr/bin/"Retropie Store"
-#VERSION 0.51 BETA
-sudo echo "Version .513 BETA"
+#VERSION 0.514 BETA
+sudo echo "Version .514 BETA"
 
 sudo apt --fix-broken install
 if ! [ -x "$(command -v whiptail)" ]; then
@@ -43,6 +43,7 @@ Download_All_Roms () {
 }
 Download_Selected_Systems () {
     ADVSEL=$(whiptail --title "Decide What Systems You Want" --menu "Choose an option" 25 78 16 \
+		"1" "Download All Selected" \
         "1" "Nintendo Entertainment System" \
         "2" "Super Nintendo Entertainemnt System" \
         "3" "Gameboy" \
@@ -56,7 +57,31 @@ Download_Selected_Systems () {
         "11" "Sega Dreamcast" \
         "12" "Playstation 1" \
         "13" "Playstation Portable" \
-        "14" "Download All Selected" 3>&1 1>&2 2>&3)
+        "14" "3do (1993) " \
+		"15" "Nintendo DSI" \
+		"16" "Intellivision" \
+		"17" "Philips CD-i" \
+		"18" "Amiga" \
+		"19" "Apple 2 Computers" \
+		"20" "Atari 2600" \
+		"21" "Atarti 5200" \
+		"22" "Atari 7800" \
+		"23" "Atari Lynx" \
+		"24" "Commodore 64" \
+		"25" "Coleco" \
+		"26" "Famicon Disk System" \
+		"27" "Game And Watch" \
+		"28" "GameGear" \
+		"29" "Löve" \
+		"30" "Macintosh" \
+		"31" "MSX" \
+		"32" "Neo Geo Pocket Color" \
+		"33" "Oric" \
+		"34" "SameCoupe" \
+		"35" "SG-1000" \
+		"36" "Wonderswan" \
+		"37" "Wonderswan Color" \
+		"38" "ScummVM" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
 	    cd /usr/bin/'Retropie Store'/temp
