@@ -889,7 +889,6 @@ mainmenu () {
         ;;
         3)
         Download_Specific_Games
-		whiptail --title "Internet Connection Not Availible" --msgbox "Not Availble Yet" 8 78
 		mainmenu
         ;;
         4) 
