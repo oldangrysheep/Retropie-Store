@@ -785,10 +785,10 @@ mainmenu () {
         ;;
         7) 
         whiptail --title "About the RetroPie Store" --msgbox "Hello (づ｡◕‿‿◕｡)づ This store is to help get new roms for RetroPie and automatically install them" 8 78
+	mainmenu
         ;;
       	8)
         Update
-		
       	;;
         9)
         exit
